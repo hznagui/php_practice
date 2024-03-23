@@ -11,5 +11,6 @@ echo "<h1>numbers</h1>";
     $count1++;
     --$count1;
     echo round($count1);
-    echo '\n<a href="/arrays.php"> for arrays</a>'
+    echo '<br><a href="/arrays.php"> for arrays</a>';
+    echo '<br><a href="/index.php"> main</a>';
 ?>
