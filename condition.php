@@ -11,9 +11,6 @@ else //condition b7al c++
     echo "sahih";
 
 
-echo "<br> <a href=index.php> to back to begining</a>";
-echo "<br> <a href=numbers.php> to numbers</a>";
-echo '<br><a href="loops.php"> loops</a>';
-echo "<br> <a href=function.php> to function   </a>";
-echo "<br> <a href=arrays.php> to arrays</a>";
+    include('pages.php');
+
 ?>

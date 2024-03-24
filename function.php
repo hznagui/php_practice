@@ -33,11 +33,8 @@ $result=[
 foreach ($result as $res)
     printz2($res);
 printz("sa3id",67);//this way we call a fucntion it like c++
-echo "<br> <a href=index.php> to back to begining</a>";
-echo "<br> <a href=numbers.php> to numbers</a>";
-echo '<br><a href="loops.php"> loops</a>';
-echo "<br> <a href=arrays.php> to arrays   </a>";
-echo "<br> <a href=condition.php> to condition</a>";
+include('pages.php');
+
 ?>
 </body>
 </html>

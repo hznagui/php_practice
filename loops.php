@@ -15,9 +15,6 @@ foreach($taible as $t)//this is new for me it work by setting the second paramet
      echo $t."<br>";
 
 
-echo "<br> <a href=index.php> to back to begining</a>";
-echo "<br> <a href=numbers.php> to numbers</a>";
-echo "<br> <a href=condition.php> to condition</a>";
-echo "<br> <a href=function.php> to function   </a>";
-echo '<br><a href="arrays.php">to arrays</a>';
+     include('pages.php');
+
 ?>
