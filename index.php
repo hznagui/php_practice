@@ -17,7 +17,7 @@
     </head>
     <body>
         <?php
-        echo("<h1>hello hello</h1>\n");
+        echo("<h1>hello in php</h1>\n");
         echo NAME;
         echo "\n $firstname $lastname\n";
         ?>
@@ -26,6 +26,8 @@
         echo "<p>waw zahya<p>";
             ?>
         <a href="numbers.php"> to numbers page </a>
+        <br><a href="arrays.php"> to arrays page </a>
+        <br><a href="loops.php"> to loops page </a>
         
     </body>
 </html>

@@ -25,4 +25,8 @@ $result=[
     ["price" => 5 , 'name' => 'micro'],
     ["price" => 600 , 'name' => 'monitor'],];//example of taible of two dimension
 echo $result[1]['name'];
+echo "<br> <a href=/> to back to begining</a>";
+echo "<br> <a href=/numbers.php> to numbers</a>";
+echo '<br><a href="/loops.php"> loops</a>';
+
 ?>
