@@ -11,9 +11,10 @@ echo "<h1>numbers</h1>";
     $count1++;
     --$count1;
     echo round($count1);
-    echo '<br><a href="/loops.php"> for loops</a>';
-    echo '<br><a href="/arrays.php"> for arrays</a>';
-    echo '<br><a href="/index.php"> main</a>';
-echo "<br> <a href=/condition.php> to condition</a>";
+    echo '<br><a href="loops.php"> for loops</a>';
+    echo '<br><a href="arrays.php"> for arrays</a>';
+    echo '<br><a href="index.php"> main</a>';
+echo "<br> <a href=condition.php> to condition</a>";
+echo "<br> <a href=function.php> to function   </a>";
 
 ?>

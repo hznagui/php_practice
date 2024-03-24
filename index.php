@@ -27,8 +27,9 @@
             ?>
         <a href="numbers.php"> to numbers page </a>
         <br><a href="arrays.php"> to arrays page </a>
-        <br> <a href=/condition.php> to condition</a>
+        <br> <a href="condition.php"> to condition</a>
 
+<br> <a href=function.php> to function   </a>
         <br><a href="loops.php"> to loops page </a>
         
     </body>
