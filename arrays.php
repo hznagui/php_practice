@@ -28,5 +28,7 @@ echo $result[1]['name'];
 echo "<br> <a href=/> to back to begining</a>";
 echo "<br> <a href=/numbers.php> to numbers</a>";
 echo '<br><a href="/loops.php"> loops</a>';
+echo "<br> <a href=/condition.php> to condition</a>";
+
 
 ?>
