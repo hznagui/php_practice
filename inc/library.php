@@ -8,6 +8,6 @@ function author($email, $password)
 }
 
 function redirect($page) {
-    header("Location: $page");
+    header("Location: $page.php");
 }
 ?>

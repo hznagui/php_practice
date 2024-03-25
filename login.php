@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<?php   include ('./inc/header.php');
+<?php  
 require_once('./inc/config.php');
 require_once('./inc/library.php');
 
 $email=$_POST['email'] ?? ""; 
 $password=$_POST['password'] ?? "";
-echo "<br> $email - $password";
 if (author($email, $password))
 {   
-    // redirect('http://127.0.0.1/php_practice/admin.php');
-    header("Location: http://127.0.0.1/php_practice/admin.php");
+    redirect('admin');
+    // header("Location: /admin.php");
     // header("Location: $page");
     die();
 }
+include ('./inc/header.php');
+echo "<br> $email - $password";
 ?>
 
 <div class="container">
