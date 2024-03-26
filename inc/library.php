@@ -10,4 +10,17 @@ function author($email, $password)
 function redirect($page) {
     header("Location: $page.php");
 }
+function isAthenticated()
+{
+    return isset($_SESSION['email']);
+}
+function ensureUserisAuthenticated()
+{
+    if(!isAthenticated())
+    {
+        redirect('login');
+        die();
+    }
+}
+
 ?>

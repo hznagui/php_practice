@@ -2,23 +2,33 @@
 <?php  
 require_once('./inc/config.php');
 require_once('./inc/library.php');
-
-$email=$_POST['email'] ?? ""; 
+session_start();
+if(isAthenticated())
+    {
+        redirect('admin');
+        die();
+    }
+$email = $_POST['email'] ?? ""; 
+$bool = "";
 $password=$_POST['password'] ?? "";
-if (author($email, $password))
-{   
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && author($email, $password))
+{
+    $_SESSION['email']=$email;
     redirect('admin');
-    // header("Location: /admin.php");
-    // header("Location: $page");
     die();
 }
+else if ($_SERVER['REQUEST_METHOD'] == 'POST')
+    $bool = "the provided credentials didn't not work!";
 include ('./inc/header.php');
-echo "<br> $email - $password";
+// echo "<br> $email - $password";
 ?>
 
 <div class="container">
     <div class="row">
         <div class="col-md-6 mx-auto mt-5">
+            <?php if ($bool != "") { ?>
+            <div class="alert alert-danger"><?php echo $bool; ?></div>
+            <?php } ?>
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="email">email</label>
@@ -33,4 +43,5 @@ echo "<br> $email - $password";
         </div>
     </div>
 </div>
+<a href="./logout.php"> logout </a>
 <?php   include ('./inc/footer.php');?>
