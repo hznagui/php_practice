@@ -7,17 +7,28 @@ if(isAthenticated())
     redirect('admin');
     die();
 }
-$email = $_POST['email'] ?? ""; 
 $bool = "";
-$password=$_POST['password'] ?? "";
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && author($email, $password))
+if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    $_SESSION['email']=$email;
-    redirect('admin');
-    die();
+    $email = htmlspecialchars( $_POST['email']) ?? "";
+    if (empty($email))
+        $bool = "Email is empty <br>";
+    $password = htmlspecialchars($_POST['password']) ?? "";
+    if (empty($password))
+        $bool .= "Password is empty <br>";
+    
+    if (empty($bool))
+    {
+        if (author($email, $password))
+            {
+            $_SESSION['email'] = $email;
+            redirect('admin');
+            die();
+        }
+        else 
+            $bool = "the provided credentials didn't not work!";
+    }
 }
-else if ($_SERVER['REQUEST_METHOD'] == 'POST')
-$bool = "the provided credentials didn't not work!";
 include ('./inc/header.php');
 // echo "<br> $email - $password";
 ?>
