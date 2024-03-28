@@ -10,21 +10,30 @@ function SendToDB()
 {
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
+        if (!isset($_POST['name']) && !isset($_POST['adresse']))
+            return null;
         $adding = new task();
-        $adding->addTask($_POST['name'], $_POST['adresse']);
+        return $adding->addTask($_POST['name'], $_POST['adresse']);
+        // $adding = null;
+        // echo $adding;
     }
+    return 1;
 }
-SendToDB();
+
+$ret = SendToDB();
 ?>
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <H1>Admin panel <?php echo $_SESSION['email'];?></H1>
+            <H1>welcome <?php echo $_SESSION['email'];?></H1>
         </div>
         <div>
             <form action="admin.php" method="POST">
+            <?php if ($ret == null) { ?>
+            <div class="alert alert-danger"><?php echo "can't adding to database"; ?></div>
+            <?php } ?>
                 <div class="form-group">
-                    <label for="name">name</label>
+                    <label class="text-capitalize" for="name">name</label>
                     <input name="name" id="name" type="text" class="form-control" placeholder="name">
                 </div>
                 <div class="form-group">
@@ -38,10 +47,12 @@ SendToDB();
         </div>
     </div>
 </div>
-
-<a href="./logout.php"> logout </a>
 <br>
-<a href="./inc/upload/index.php"> for uploading </a>
-<a href="./inc/upload/indexmulti.php"> for multi uploading </a>
-
+<div class="text-center">
+    <a class="btn btn-danger" href="./logout.php"> logout </a>
+    <a class="btn btn-success" href="./inc/upload/index.php"> uploading </a>
+    <a class="btn btn-warning" href="./inc/upload/indexmulti.php"> for multi uploading </a>
+    <a class="btn btn-warning" href="./readDB.php">so see what is in DB </a>
+</div>
+    
 <?php include('./inc/footer.php');?>
