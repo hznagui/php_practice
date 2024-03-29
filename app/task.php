@@ -40,8 +40,9 @@ class task extends Dataprovider
             return null;
         $sql = "SELECT * FROM data WHERE name like :search OR adresse LIKE :search";
         $smt = $db->prepare($sql);
-        $smt->execute([":search" => '%'.$search.'%']); 
+        $smt->execute([":search" => '%'.$search.'%']);
         $ret = $smt->fetchall(PDO::FETCH_ASSOC);
+        // print_r($ret);
         $smt = null;
         $db = null;
         if  (!$ret)

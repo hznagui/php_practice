@@ -24,7 +24,7 @@ $ret = SendToDB();
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-13">
             <H1>welcome <?php echo $_SESSION['email'];?></H1>
         </div>
         <div>
@@ -42,7 +42,12 @@ $ret = SendToDB();
                 </div>
                 <br>
                 <input type="submit" value="add info" class="w-100 btn btn-lg btn-outline-danger">
-                  
+            </form> <br>
+            <form method=post action="search.php">
+                <div class=form-group>
+                    <input type="text" class="w-25 form-control" name="search" placeholder="search">
+                    <input type="submit" value=search class=" center w-25 btn btn-outline-danger">
+                </div>
             </form>
         </div>
     </div>

@@ -55,5 +55,4 @@ include ('./inc/header.php');
         </div>
     </div>
 </div>
-<a href="./logout.php"> logout </a>
 <?php   include ('./inc/footer.php');?>
